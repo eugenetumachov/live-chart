@@ -1,0 +1,9 @@
+export const DEFAULT_NUMBER_OF_POINTS = 10000;
+export const DEFAULT_START_INDEX = 0;
+export const DEFAULT_INDEX_INCREMENT = 10;
+export const DEFAULT_INCREMENT_INTERVAL = 500;
+export const DEFAULT_DOWNSAMPLING_THRESHOLD = 1000;
+
+export const CHART_WIDTH = 1000;
+export const CHART_HEIGHT = 600;
+export const CHART_MARGIN = 50;

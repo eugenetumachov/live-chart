@@ -1,0 +1,19 @@
+.chart-controls {
+    display: inline-grid;
+    grid-template-columns: 60% 30%;
+}
+
+label {
+    display: block;
+    margin: .5rem 0
+  }
+  
+  label span {
+    display: inline-block;
+    width: 140px;
+  }
+  
+  button {
+    display: block;
+    margin: 1rem 0;
+  }
