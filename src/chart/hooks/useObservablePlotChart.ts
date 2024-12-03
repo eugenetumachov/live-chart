@@ -8,7 +8,7 @@ export const useChart = () => {
   const chart = useRef<ReturnType<typeof Plot.plot>>();
 
   const drawChart = useCallback(
-    (rows: DownsampledPoint[], canvas: HTMLDivElement, downsampleThreshold: number) => {
+    (rows: DownsampledPoint[], canvas: HTMLDivElement) => {
       if (chart.current) chart.current.remove();
 
       const isDownsampled = rows.some((row) => row.yMax);
@@ -22,8 +22,7 @@ export const useChart = () => {
                   x: "x",
                   y1: "yMin",
                   y2: "yMax",
-                  fill: "gray",
-                  fillOpacity: 0.5,
+                  fill: "var(--shadow-fill-color)",
                 }),
               ]
             : []),

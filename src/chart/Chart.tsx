@@ -39,8 +39,7 @@ const Chart = () => {
   const { drawChart } = useChart();
 
   const plotRef = useRef<HTMLDivElement>(null); // Observable Plot
-
-  let interval = useRef<NodeJS.Timer>();
+  const interval = useRef<number>();
 
   const slicedRows = rows.slice(startIndex, startIndex + numberOfPoints);
 
@@ -78,7 +77,7 @@ const Chart = () => {
     if (!downsampledRows.length) return; // nothing to draw
 
     const frame = requestAnimationFrame(() =>
-      drawChart(downsampledRows, plotRef.current!, downsampleThreshold)
+      drawChart(downsampledRows, plotRef.current!)
     );
 
     return () => cancelAnimationFrame(frame);

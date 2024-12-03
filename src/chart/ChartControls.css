@@ -1,19 +1,16 @@
 .chart-controls {
-    display: inline-grid;
-    grid-template-columns: 60% 30%;
+  column-gap: 2rem;
+  display: inline-grid;
+  grid-template-columns: 30% 15% 30% 15%;
+  row-gap: 0.5rem;
 }
 
 label {
-    display: block;
-    margin: .5rem 0
-  }
-  
-  label span {
-    display: inline-block;
-    width: 140px;
-  }
-  
-  button {
-    display: block;
-    margin: 1rem 0;
-  }
+  display: block;
+  margin: 0.5rem 0;
+}
+
+label span {
+  display: inline-block;
+  width: 140px;
+}

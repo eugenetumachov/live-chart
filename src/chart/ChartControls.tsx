@@ -26,7 +26,9 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
 
   function parseCSV(csv: string) {
     const parsedCsv = d3.csvParseRows(csv);
-    const rows = parsedCsv.map((row) => [parseInt(row[0]), parseFloat(row[1])] as Point);
+    const rows = parsedCsv.map(
+      (row) => [parseInt(row[0]), parseFloat(row[1])] as Point
+    );
     updateConfig({ type: "SET_ROWS", payload: rows });
   }
 
@@ -40,9 +42,7 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
 
   return (
     <>
-      <div>
-        <input type="file" onChange={handleFileChange} />
-      </div>
+      <input type="file" onChange={handleFileChange} />
 
       <div className="chart-controls">
         <label htmlFor="number-of-points">Points to draw:</label>
@@ -52,7 +52,10 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
           min="0"
           value={numberOfPoints}
           onChange={(e) =>
-            updateConfig({ type: "SET_NUMBER_OF_POINTS", payload: e.target.valueAsNumber })
+            updateConfig({
+              type: "SET_NUMBER_OF_POINTS",
+              payload: e.target.valueAsNumber,
+            })
           }
         />
 
@@ -63,7 +66,10 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
           min="0"
           value={startIndex}
           onChange={(e) =>
-            updateConfig({ type: "SET_START_INDEX", payload: e.target.valueAsNumber })
+            updateConfig({
+              type: "SET_START_INDEX",
+              payload: e.target.valueAsNumber,
+            })
           }
         />
 
@@ -74,7 +80,10 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
           min="0"
           value={indexIncrement}
           onChange={(e) =>
-            updateConfig({ type: "SET_INDEX_INCREMENT", payload: e.target.valueAsNumber })
+            updateConfig({
+              type: "SET_INDEX_INCREMENT",
+              payload: e.target.valueAsNumber,
+            })
           }
         />
 
@@ -85,7 +94,10 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
           min="16"
           value={incrementInterval}
           onChange={(e) =>
-            updateConfig({ type: "SET_INCREMENT_INTERVAL", payload: e.target.valueAsNumber })
+            updateConfig({
+              type: "SET_INCREMENT_INTERVAL",
+              payload: e.target.valueAsNumber,
+            })
           }
         />
 
@@ -96,17 +108,21 @@ const ChartControls = ({ config, updateConfig }: ChartControlsProps) => {
           min="0"
           value={downsampleThreshold}
           onChange={(e) =>
-            updateConfig({ type: "SET_DOWNSAMPLE_THRESHOLD", payload: e.target.valueAsNumber })
+            updateConfig({
+              type: "SET_DOWNSAMPLE_THRESHOLD",
+              payload: e.target.valueAsNumber,
+            })
           }
         />
-      </div>
 
-      <button
-        disabled={rows.length === 0}
-        onClick={() => updateConfig({ type: "TOGGLE_IS_INCREMENT" })}
-      >
-        {isAnimated ? "Stop" : "Start"}
-      </button>
+        <button
+          style={{ gridColumn: "3 / 5" }}
+          disabled={rows.length === 0}
+          onClick={() => updateConfig({ type: "TOGGLE_IS_INCREMENT" })}
+        >
+          {isAnimated ? "Stop" : "Start"}
+        </button>
+      </div>
     </>
   );
 };
