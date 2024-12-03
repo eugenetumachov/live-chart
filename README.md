@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# Line Chart Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A demo of a line chart with animation. Tech stack:
 
-Currently, two official plugins are available:
+- Data manipulation: [D3](https://d3js.org/)
+- Chart rendering: [Observable Plot](https://observablehq.com/plot/)
+- Framework: React + TypeScript
+- Building: Vite
+- Testing: Vitest + React Testing Library
+- Linting: ESLint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running the project
 
-## Expanding the ESLint configuration
+First, you need to install the project dependencies. Make sure your current directory is the project folder where the package.json file is located, and run
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### `npm install`
 
-- Configure the top-level `parserOptions` property like this:
+Once the installation finishes, run the project with
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### `npm run dev`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+This should build the project and open a new tab in the default browser. The application should be available at [http://localhost:5173/](http://localhost:5173/)
